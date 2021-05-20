@@ -15,9 +15,15 @@ class MainActivity : AppCompatActivity() {
 
         var intent: Intent
         var CV2 = findViewById<CardView>(R.id.CV2)
+        val CardViewName = findViewById<CardView>(R.id.CardViewName)
 
         CV2.setOnClickListener {
-            startActivity(Intent(this@MainActivity,ConstellationActivity::class.java))
+            startActivity(Intent(this@MainActivity, ConstellationActivity::class.java))
+
+        }
+        CardViewName.setOnClickListener {
+            startActivity(Intent(this@MainActivity, NameActivity::class.java))
+
         }
 
     }
