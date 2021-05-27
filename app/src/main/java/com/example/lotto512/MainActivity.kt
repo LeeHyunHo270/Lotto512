@@ -53,7 +53,8 @@ class MainActivity : AppCompatActivity() {
         cardRandom.setOnClickListener{
             startActivity(Intent(this@MainActivity, ResultActivity::class.java))
             val intent = Intent(this, ResultActivity::class.java)
-            intent.putIntegerArrayListExtra("result", ArrayList(getRandomLottoNumber()))
+            intent.putIntegerArrayListExtra("result", ArrayList(getRandomLottoNumbers()))
+            //getShuffledLottoNumbers()
             startActivity(intent)
         }
         cardName.setOnClickListener {
