@@ -14,32 +14,34 @@ class ResultActivity : AppCompatActivity() {
 
         val result = intent.getIntegerArrayListExtra("result") ?: return
         val strConstellation = intent.getStringExtra("Constellation")
+        val DatePickerDate = intent.getStringExtra("DatePickerDate")
 
 
-        val result_sorted=result?.sorted()
+        val result_sorted = result?.sorted()
 
-        strConstellation?.let{
+        strConstellation?.let {
             val resultLabel = findViewById<TextView>(R.id.resultlabel)
-            resultLabel.text="${strConstellation}의 ${SimpleDateFormat("yyyy년 MM월 dd일")
-                    .format(Date())} 로또번호입니다 "}
+            //resultLabel.text="${strConstellation}의 ${SimpleDateFormat("yyyy년 MM월 dd일")
+            //       .format(Date())} 로또번호입니다 "}
+            resultLabel.text = "${strConstellation}의 ${DatePickerDate} 로또번호입니다"
 
-        val lottoBallImageStartId = R.drawable.ball_01
-        val lottoBallImagetId2 = R.drawable.ball_02
-        val lottoBallImagetId3 = R.drawable.ball_03
+            val lottoBallImageStartId = R.drawable.ball_01
+            val lottoBallImagetId2 = R.drawable.ball_02
+            val lottoBallImagetId3 = R.drawable.ball_03
 
-        val imageView1 = findViewById<ImageView>(R.id.imageView1)
-        val imageView2 = findViewById<ImageView>(R.id.imageView2)
-        val imageView3 = findViewById<ImageView>(R.id.imageView3)
-        val imageView4 = findViewById<ImageView>(R.id.imageView4)
-        val imageView5 = findViewById<ImageView>(R.id.imageView5)
-        val imageView6 = findViewById<ImageView>(R.id.imageView6)
+            val imageView1 = findViewById<ImageView>(R.id.imageView1)
+            val imageView2 = findViewById<ImageView>(R.id.imageView2)
+            val imageView3 = findViewById<ImageView>(R.id.imageView3)
+            val imageView4 = findViewById<ImageView>(R.id.imageView4)
+            val imageView5 = findViewById<ImageView>(R.id.imageView5)
+            val imageView6 = findViewById<ImageView>(R.id.imageView6)
 
-        imageView1.setImageResource(lottoBallImageStartId + result_sorted[0] - 1)
-        imageView2.setImageResource(lottoBallImageStartId + result_sorted[1] - 1)
-        imageView3.setImageResource(lottoBallImageStartId + result_sorted[2] - 1)
-        imageView4.setImageResource(lottoBallImageStartId + result_sorted[3] - 1)
-        imageView5.setImageResource(lottoBallImageStartId + result_sorted[4] - 1)
-        imageView6.setImageResource(lottoBallImageStartId + result_sorted[5] - 1)
+            imageView1.setImageResource(lottoBallImageStartId + result_sorted[0] - 1)
+            imageView2.setImageResource(lottoBallImageStartId + result_sorted[1] - 1)
+            imageView3.setImageResource(lottoBallImageStartId + result_sorted[2] - 1)
+            imageView4.setImageResource(lottoBallImageStartId + result_sorted[3] - 1)
+            imageView5.setImageResource(lottoBallImageStartId + result_sorted[4] - 1)
+            imageView6.setImageResource(lottoBallImageStartId + result_sorted[5] - 1)
 
-    }
-}
+        }
+    }}
